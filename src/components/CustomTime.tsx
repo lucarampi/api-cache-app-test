@@ -17,6 +17,6 @@ export default function CustomTime({
         setDate(date || "")
       );
     fetchTime();
-  }, []);
+  }, [path]);
   return <div>{date || "Date error"}</div>;
 }
