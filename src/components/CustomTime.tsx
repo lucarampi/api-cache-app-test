@@ -1,6 +1,6 @@
 "use client";
 
-import { getTimeFromEndpoint } from "@/app/page";
+import { getTimeFromEndpoint } from "@/utils/getTimeFromEndpoint";
 import { useEffect, useState } from "react";
 
 interface CustomTimeProps {

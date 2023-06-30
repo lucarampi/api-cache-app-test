@@ -3,21 +3,8 @@ import ClientTime from "@/components/ClientTime";
 import CustomTime from "@/components/CustomTime";
 import axios from "axios";
 
-interface TimeApiResponse {
+export interface TimeApiResponse {
   date: string;
-}
-
-export async function getTimeFromEndpoint(path: string) {
-  let date: TimeApiResponse = { date: "Fetch error" };
-  try {
-    const { data } = await axios.get<TimeApiResponse>(path, {
-      headers: {},
-    });
-    date = { ...data };
-  } catch (error) {
-    // console.log("🚀 ~ file: page.tsx:14 ~ getTimeFromEndpoint ~ error:", error);
-  }
-  return date;
 }
 
 export default async function Home() {
