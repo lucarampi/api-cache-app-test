@@ -6,7 +6,7 @@ export async function getTimeFromEndpoint(path: string, noCache: boolean = false
     try {
         let res
         if (noCache) {
-            res = await fetch(path, { cache: "no-store" });
+            res = await fetch(path, { cache: "no-store", next: { revalidate: 2 } });
         } else {
             res = await fetch(path);
         }
