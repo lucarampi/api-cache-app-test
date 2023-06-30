@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import ClientTime from "@/components/ClientTime";
 import CustomTime from "@/components/CustomTime";
 import axios from "axios";
@@ -21,7 +21,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-start">
           <span>No-Cache-API time</span>
-          <CustomTime path="api/no-cache-time" />
+          <CustomTime path="api/no-cache-time" noCache={true} />
         </div>
       </div>
     </main>

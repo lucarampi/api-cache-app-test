@@ -5,15 +5,14 @@ import { useEffect, useState } from "react";
 
 interface CustomTimeProps {
   path: string;
+  noCache?: boolean;
 }
 
-export default function CustomTime({
-  path,
-}: CustomTimeProps) {
+export default function CustomTime({ path, noCache = false }: CustomTimeProps) {
   const [date, setDate] = useState("loading");
   useEffect(() => {
     const fetchTime = () =>
-      getTimeFromEndpoint(path).then(({ date }) =>
+      getTimeFromEndpoint(path, noCache).then(({ date }) =>
         setDate(date || "")
       );
     fetchTime();
