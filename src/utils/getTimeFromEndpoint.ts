@@ -7,7 +7,7 @@ export async function getTimeFromEndpoint(path: string, noCache: boolean = false
         const { data } = await axios.get<TimeApiResponse>(path, {
             headers: noCache ? {
                 "Cache-Control": "must-revalidate,no-cache,no-store",
-                "cache": "no-cache"
+                "cache": "no-store"
             } : {}
 
         });
