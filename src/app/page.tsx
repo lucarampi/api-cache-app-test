@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import ClientTime from "@/components/ClientTime";
 import CustomTime from "@/components/CustomTime";
 import axios from "axios";
@@ -7,7 +7,7 @@ export interface TimeApiResponse {
   date: string;
 }
 
-export default async function Home() {
+export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 ">
       <div className="flex flex-col gap-10">
