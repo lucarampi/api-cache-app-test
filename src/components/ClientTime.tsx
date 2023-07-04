@@ -1,5 +1,8 @@
 "use client";
 
+import { useState } from "react";
+
 export default function ClientTime() {
-  return <div>{new Date().toUTCString().toString() || "Date error"}</div>;
+  const [date, setDate] = useState(new Date());
+  return <div>{date.toUTCString() || "Date error"}</div>;
 }
