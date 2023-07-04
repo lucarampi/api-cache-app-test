@@ -1,5 +1,4 @@
 import { TimeApiResponse } from "@/app/page";
-import axios from "axios";
 
 export async function getTimeFromEndpoint(path: string, noCache: boolean = false) {
     let date: TimeApiResponse = { date: "Fetch error" };
@@ -7,8 +6,7 @@ export async function getTimeFromEndpoint(path: string, noCache: boolean = false
         let res
         if (noCache) {
             res = await fetch(path, {
-                headers: { "Cache-Control": " must-revalidate,no-cache,no-store" },
-                cache: "no-store", next: { revalidate: 5 }
+                cache: "no-store"
             });
         } else {
             res = await fetch(path);
